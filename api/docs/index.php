@@ -33,7 +33,7 @@
     <script>
         window.onload = function () {
             const ui = SwaggerUIBundle({
-                url: "//<?=$_SERVER['SERVER_NAME']?><?=str_replace("/docs", "/swagger", $_SERVER['REQUEST_URI'])?>",
+                url: "//<?=$_SERVER['SERVER_NAME']?><?=str_replace("/docs/", "/swagger", $_SERVER['REQUEST_URI'])?>",
                 dom_id: '#swagger-ui',
                 deepLinking: true,
                 presets: [
