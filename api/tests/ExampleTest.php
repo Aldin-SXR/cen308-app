@@ -9,7 +9,7 @@ class ExampleTest extends TestCase
     protected function setUp(): void
     {
         $this->client = new GuzzleHttp\Client([
-            'base_uri' => array_key_exists('HEROKU', $_ENV) ? 
+            'base_uri' => getenv('HEROKU') ? 
                 'https://cen308-test.herokuapp.com/api/' : 'http://localhost/cen308-app/api/'
         ]);
     }
