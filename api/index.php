@@ -52,6 +52,10 @@ Flight::route('GET /', function () {
     Flight::redirect('/docs');
 });
 
+Flight::route('GET /status', function () {
+    Flight::json(['status' => 'online']);
+});
+
 /* register Business Logic layer services */
 Flight::register('userService', 'UserService');
 
