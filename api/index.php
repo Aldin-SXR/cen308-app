@@ -38,7 +38,7 @@ Flight::map('jwt', function ($user) {
  * @OA\Info(title="CEN 308 App API", version="0.2")
  * @OA\OpenApi(
  *    @OA\Server(url="http://localhost/cen308-app/api/", description="Development Environment" ),
- *    @OA\Server(url="https://autoresponder.biznet.ba/api/", description="Production Environment" )
+ *    @OA\Server(url="https://cen308-test.herokuapp.com/api/", description="Production Environment" )
  * ),
  * @OA\SecurityScheme(securityScheme="ApiKeyAuth", type="apiKey", in="header", name="Authentication" )
  */

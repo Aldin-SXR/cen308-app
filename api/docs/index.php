@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>CEN308 App API</title>
-    <link rel="stylesheet" type="text/css" href="docs/swagger-ui.css">
-    <link rel="icon" type="image/png" href="docs/favicon-32x32.png" sizes="32x32" />
+    <link rel="stylesheet" type="text/css" href="swagger-ui.css">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
     <style>
         html {
             box-sizing: border-box;
@@ -28,8 +28,8 @@
 
 <body>
     <div id="swagger-ui"></div>
-    <script src="docs/swagger-ui-bundle.js"> </script>
-    <script src="docs/swagger-ui-standalone-preset.js"> </script>
+    <script src="swagger-ui-bundle.js"> </script>
+    <script src="swagger-ui-standalone-preset.js"> </script>
     <script>
         window.onload = function () {
             const ui = SwaggerUIBundle({
