@@ -52,6 +52,11 @@ Flight::route('GET /', function () {
     Flight::redirect('/docs');
 });
 
+/**
+ * @OA\Get(path="/status/", tags={"status"},
+ *     @OA\Response(response="200", description="Checking if the system is online.")
+ * )
+ */
 Flight::route('GET /status', function () {
     Flight::json(['status' => 'online']);
 });
