@@ -4,7 +4,6 @@ This is a demo project made for the purposes of demonstrating deployment, CI/CD 
 
 The code is mostly taken from: https://github.com/dinokeco/autoresponder/
 
-
 ---
 > Aldin Kovačević,
 > 
