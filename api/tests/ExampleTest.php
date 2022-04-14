@@ -1,5 +1,9 @@
 <?php
 
+use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
 class ExampleTest extends TestCase
@@ -8,9 +12,13 @@ class ExampleTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->client = new GuzzleHttp\Client([
-            'base_uri' => getenv('HEROKU') ? 'https://cen308-app.herokuapp.com/api/' : 'http://localhost/cen308-app/api/'
+        $mock = new MockHandler([
+            // status code, headers, response
+            new Response(200, [], json_encode(['status' => 'online' ])),
         ]);
+        
+        $handlerStack = HandlerStack::create($mock);
+        $this->client = new Client(['handler' => $handlerStack]);
     }
 
     public function testStatusRoute()
