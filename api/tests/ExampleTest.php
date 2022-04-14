@@ -12,7 +12,7 @@ class ExampleTest extends TestCase {
 
     protected function setUp(): void {
         $mock = new MockHandler([
-            new Response(200, [], json_encode(['status' => 'online'])),
+            new Response(200, [], json_encode(['status' => 'offline'])),
         ]);
 
         $handlerStack = HandlerStack::create($mock);
