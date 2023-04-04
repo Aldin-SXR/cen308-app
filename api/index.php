@@ -44,7 +44,6 @@ Flight::map('jwt', function ($user) {
  */
 Flight::route('GET /swagger', function () {
     $openapi = @\OpenApi\scan([dirname(__FILE__) . "/routes", dirname(__FILE__) . "/index.php"]);
-    header('Content-Type: application/json');
     echo $openapi->toJson();
 });
 
