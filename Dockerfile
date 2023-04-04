@@ -1,16 +1,17 @@
-FROM richarvey/nginx-php-fpm:1.9.1
+FROM php:8.0-apache
+WORKDIR /var/www/html
 
 COPY . .
 
-# Image config
-ENV WEBROOT /var/www/html/public
-ENV PHP_ERRORS_STDERR 1
-ENV RUN_SCRIPTS 1
-ENV REAL_IP_HEADER 1
+# Commong extensions
+RUN apt update
+RUN apt install zip libzip-dev -y
+RUN docker-php-ext-install pdo_mysql zip
 
-# Allow composer to run as root
-ENV COMPOSER_ALLOW_SUPERUSER 1
+# Composer install
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+COPY composer.json composer.json
+RUN composer install --no-dev
 
-RUN composer install --no-dev --working-dir=/var/www/html
-
-CMD ["/start.sh"]
+EXPOSE 80
+EXPOSE 443
