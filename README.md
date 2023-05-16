@@ -4,7 +4,7 @@ This is a demo project made for the purposes of demonstrating deployment, CI/CD 
 
 In this release, the following features are available:
 - the `/status` endpoint
-- the `/login` endpoint (works with `username = demo` and `password = demo`
+- the `/login` endpoint (works with `username = demo` and `password = demo`)
 - Swagger documentation set up
 
 ---
